@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+		<property name="hibernate.connection.url">jdbc:postgresql://192.168.1.3:5432/learning</property>
+		<property name="hibernate.connection.username">postgres</property>
+		<property name="hibernate.connection.password">dangkhoa</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+		<property name="show_sql">true</property>
+		
+		<property name="hibernate.current_session_context_class">org.hibernate.context.ThreadLocalSessionContext</property>
+
+		<mapping class="server.common.model.BaseEntity" />
+        <mapping class="server.common.model.Entity" />
+        <mapping class="server.common.model.Student" />
+	</session-factory>
+</hibernate-configuration>

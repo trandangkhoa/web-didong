@@ -1,0 +1,13 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="entityDAO" class="server.common.dao.EntityDAO">
+		<constructor-arg name="sessionFactory" ref="sessionFactory"></constructor-arg>
+	</bean>
+
+	<bean id="entityService" class="server.common.service.EntityService">		
+		<constructor-arg name="sessionFactory" ref="sessionFactory"></constructor-arg>
+		<constructor-arg name="entityDAO" ref="entityDAO"></constructor-arg>
+	</bean>
+</beans>
